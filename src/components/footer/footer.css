@@ -25,3 +25,10 @@
     font-size: 20px;
     color: #fff;
 }
+.footer ul li a{
+    color: #fff;
+}
+.footer .socialicon{
+    display: flex;
+    justify-content: space-around;
+}
