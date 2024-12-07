@@ -11,7 +11,7 @@ let seconds = Math.floor((distance % (1000 * 60)) / 1000);
   document.getElementById("days").innerHTML = days + "d ";
   document.getElementById("hours").innerHTML = hours + "h ";
   document.getElementById("minutes").innerHTML = minutes + "m ";
-  document.getElementById("seconds").innerHTML = seconds + "m ";
+  document.getElementById("seconds").innerHTML = seconds + "s";
   if (distance < 0) {
     clearInterval(x);
     document.getElementById("days").innerHTML = "EXPIRED";
