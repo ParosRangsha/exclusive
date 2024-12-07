@@ -44,11 +44,11 @@ const Home = () => {
                 <h4>Days</h4>
                 <h3 id='days'></h3>
               </div>
-              <div className="Hours">
+              <div className="hours">
                 <h4>Hours</h4>
                 <h3 id='hours'></h3>
               </div>
-              <div className="days">
+              <div className="minutes">
                 <h4>Minutes</h4>
                 <h3 id='minutes'></h3>
               </div>

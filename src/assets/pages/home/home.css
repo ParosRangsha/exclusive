@@ -42,3 +42,10 @@
     display: flex;
     gap: 20px;
 }
+.home .days, .hours, .minutes, .seconds{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ddd;
+    padding: 5px 15px;
+}
