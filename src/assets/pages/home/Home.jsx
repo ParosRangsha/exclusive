@@ -11,8 +11,8 @@ import "slick-carousel/slick/slick.css";
 const Home = () => {
   let [data, setData] = useState([])
   let getData = ()=>{
-    axios.get('https://dummyjson.com/products').then((response)=>{
-      setData(response.data.products);
+    axios.get('https://dummyjson.com/products/category/laptops').then((response)=>{
+      setData(response.data.products);      
     })
   }
   useEffect(()=>(
@@ -22,8 +22,8 @@ const Home = () => {
     arrows: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 3,
+    slidesToShow: 3,
+    slidesToScroll: 1,
   };
   return (
     <div className="home">
@@ -78,20 +78,26 @@ const Home = () => {
             </Col>
           </Row>
           <Row>
-              <Slider {...settings}>
-                {data.map((items)=>(
-                  <Col lg={3} className='homeproducts'>
-                    <div className="thumb">
-                      <img src={items.images} alt="products" />
-                    </div>
-                    <h4>{items.title}</h4>
-                    <p>Price: <span className='productprice'>{items.price}</span>$</p>
-                    <p>Rating: <span className='productrating'>{items.rating}</span> out of <span className='productrating'>5.00</span></p>
-                  </Col>
-                ))}
-              </Slider>
+            <Slider {...settings}>
+              {data.map((items)=>(
+                <Col lg={3} className='homeproducts'>
+                  <div className="thumb">
+                    <img src={items.images[0]} alt="products" />
+                  </div>
+                  <h4>{items.title}</h4>
+                  <p>Price: <span className='productprice'>{items.price}</span>$</p>
+                  <p>Rating: <span className='productrating'>{items.rating}</span> out of <span className='productrating'>5.00</span></p>
+                </Col>
+              ))}
+            </Slider>
           </Row>
+          <div className='viewmore'>
+              <Link to="/products">View All Products</Link>
+          </div>
         </Container>
+      </div>
+      <div className="cate">
+        
       </div>
     </div>
   )

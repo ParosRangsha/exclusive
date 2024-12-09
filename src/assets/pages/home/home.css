@@ -20,6 +20,7 @@
 }
 .todays{
     padding: 50px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 .todays .subhead{
     position: relative;
@@ -60,4 +61,20 @@
 .homeproducts p .productrating{
     font-weight: 600;
     font-size: 16px;
+}
+.viewmore{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 60px;
+}
+.viewmore a{
+    padding: 15px 30px;
+    text-align: center;
+    display: inline-block;
+    background-color: #DB4444;
+    color: #fff;
+}
+.cate{
+    padding: 60px 0;
 }
