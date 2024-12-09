@@ -1,11 +1,30 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './home.css'
 import { Col, Container, Row } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import homeban from '../../../img/homebanner.jpg'
 import './count.js'
+import axios from 'axios'
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
 
 const Home = () => {
+  let [data, setData] = useState([])
+  let getData = ()=>{
+    axios.get('https://dummyjson.com/products').then((response)=>{
+      setData(response.data.products);
+    })
+  }
+  useEffect(()=>(
+    getData()
+  ),[])
+  var settings = {
+    arrows: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 3,
+  };
   return (
     <div className="home">
       <div className="banner">
@@ -57,6 +76,20 @@ const Home = () => {
                 <h3 id='seconds'></h3>
               </div>
             </Col>
+          </Row>
+          <Row>
+              <Slider {...settings}>
+                {data.map((items)=>(
+                  <Col lg={3} className='homeproducts'>
+                    <div className="thumb">
+                      <img src={items.images} alt="products" />
+                    </div>
+                    <h4>{items.title}</h4>
+                    <p>Price: <span className='productprice'>{items.price}</span>$</p>
+                    <p>Rating: <span className='productrating'>{items.rating}</span> out of <span className='productrating'>5.00</span></p>
+                  </Col>
+                ))}
+              </Slider>
           </Row>
         </Container>
       </div>

@@ -49,3 +49,15 @@
     border: 1px solid #ddd;
     padding: 5px 15px;
 }
+.homeproducts p{
+    padding: 0;
+    margin: 0;
+}
+.homeproducts p .productprice{
+    font-weight: 700;
+    font-size: 20px;
+}
+.homeproducts p .productrating{
+    font-weight: 600;
+    font-size: 16px;
+}

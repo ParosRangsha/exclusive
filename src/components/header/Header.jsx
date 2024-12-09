@@ -36,9 +36,9 @@ const Header = () => {
                 </Navbar.Collapse>
                 <div className="shopBtn">
                     <input type="text" placeholder='What are you looking for?'/>
-                    <Link to="/search"><i class="fa-solid fa-magnifying-glass"></i></Link>
-                    <Link to="/favorite"><i class="fa-regular fa-heart"></i></Link>
-                    <Link to="/shop"><i class="fa-solid fa-cart-shopping"></i></Link>
+                    <Link to="/search"><i className="fa-solid fa-magnifying-glass"></i></Link>
+                    <Link to="/favorite"><i className="fa-regular fa-heart"></i></Link>
+                    <Link to="/shop"><i className="fa-solid fa-cart-shopping"></i></Link>
                 </div>
             </Container>
         </Navbar>

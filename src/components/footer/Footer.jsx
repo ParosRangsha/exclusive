@@ -18,7 +18,7 @@ const Footer = () => {
               <li>Get 10% off your first order</li>
               <li>
                 <input type="text" placeholder='Enter your email'/>
-                <i class="fa-solid fa-forward"></i>
+                <i className="fa-solid fa-forward"></i>
               </li>
             </ul>
           </Col>
@@ -74,10 +74,10 @@ const Footer = () => {
               <li><p>Save $3 with App New User Only</p></li>
               <li><img src={playstore} alt="playstore"/></li>
               <li className='socialicon'>
-                <Link to="/"><i class="fa-brands fa-facebook-f"></i></Link>
-                <Link to="/"><i class="fa-brands fa-twitter"></i></Link>
-                <Link to="/"><i class="fa-brands fa-instagram"></i></Link>
-                <Link to="/"><i class="fa-brands fa-linkedin-in"></i></Link>
+                <Link to="/"><i className="fa-brands fa-facebook-f"></i></Link>
+                <Link to="/"><i className="fa-brands fa-twitter"></i></Link>
+                <Link to="/"><i className="fa-brands fa-instagram"></i></Link>
+                <Link to="/"><i className="fa-brands fa-linkedin-in"></i></Link>
               </li>
             </ul>
           </Col>
