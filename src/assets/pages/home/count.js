@@ -16,4 +16,19 @@ let seconds = Math.floor((distance % (1000 * 60)) / 1000);
     clearInterval(x);
     document.getElementById("days").innerHTML = "EXPIRED";
   }
+
+let distances = countDownDate - now;
+let dayss = Math.floor(distance / (10000 * 60 * 60 * 60));
+let hourss = Math.floor((distance % (1000 * 60 * 60 * 60)) / (1000 * 60 * 60));
+let minutess = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+let secondss = Math.floor((distance % (1000 * 60)) / 1000);
+
+  document.getElementById("dayss").innerHTML = dayss;
+  document.getElementById("hourss").innerHTML = hourss;
+  document.getElementById("minutess").innerHTML = minutess;
+  document.getElementById("secondss").innerHTML = secondss;
+  if (distances < 0) {
+    clearInterval(x);
+    document.getElementById("dayss").innerHTML = "EXPIRED";
+  }
 }, 1000);

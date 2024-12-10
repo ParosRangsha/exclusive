@@ -3,6 +3,7 @@ import './home.css'
 import { Col, Container, Row } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import homeban from '../../../img/homebanner.jpg'
+import jbl from '../../../img/jbl.png'
 import './count.js'
 import axios from 'axios'
 import Slider from "react-slick";
@@ -10,11 +11,20 @@ import "slick-carousel/slick/slick.css";
 
 const Home = () => {
   let [data, setData] = useState([])
+  let [mandata, setManData] = useState([])
   let getData = ()=>{
     axios.get('https://dummyjson.com/products/category/laptops').then((response)=>{
       setData(response.data.products);      
     })
   }
+  let getmanData = ()=>{
+    axios.get('https://dummyjson.com/products/category/mens-shirts').then((resman)=>{
+      setManData(resman.data.products);
+    })
+  }
+  useEffect(()=>(
+    getmanData()
+  ))
   useEffect(()=>(
     getData()
   ),[])
@@ -23,6 +33,13 @@ const Home = () => {
     infinite: true,
     speed: 500,
     slidesToShow: 3,
+    slidesToScroll: 1,
+  };
+  var settingsTwo = {
+    arrows: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
     slidesToScroll: 1,
   };
   return (
@@ -146,6 +163,67 @@ const Home = () => {
                 <i className="fa-duotone fa-regular fa-gamepad"></i>
                 <p>Gamings</p>
               </div>
+            </Col>
+          </Row>
+        </Container>
+      </div>
+      <div className="thismonth">
+        <Container>
+          <Row className='subheading'>
+            <h5>This Month</h5>
+          </Row>
+          <Row>
+            <div className="monthheading">
+              <h2>Best Selling Products</h2>
+              <div className="monthBtn">
+                <Link to='/products'>View All</Link>
+              </div>
+            </div>
+          </Row>
+          <Row>
+            <Slider {...settingsTwo}>
+              {mandata.map((items)=>(
+                  <Col lg={3}>
+                    <div className="thumb">
+                      <img src={items.images[0]} alt="" />
+                      <h5>{items.title}</h5>
+                      <h6>Price: <span className='pricerate'>{items.price}</span>$ <del>{Math.floor(items.price + 10)}$</del></h6>
+                      <h6>Rating: <span>{items.rating}</span> out of <span>5.00</span></h6>
+                    </div>
+                  </Col>
+                ))}
+            </Slider>
+          </Row>
+          <Row className="bigthumb">
+            <Col lg={5}>
+              <div className="subheading">
+                <h5>Categoris</h5>
+              </div>
+              <h2>Enhance Your Music Experience</h2>
+              <div className="timer">
+                <div className="box">
+                  <p id='dayss'></p>
+                  <p>Days</p>
+                </div>
+                <div className="box">
+                  <p id='hourss'></p>
+                  <p>Hours</p>
+                </div>
+                <div className="box">
+                  <p id='minutess'></p>
+                  <p>Minutes</p>
+                </div>
+                <div className="box">
+                  <p id='secondss'></p>
+                  <p>Seconds</p>
+                </div>
+              </div>
+              <div className="bigBtn">
+                <Link to='/buynow'>Buy Now</Link>
+              </div>
+            </Col>
+            <Col lg={7}>
+              <img src={jbl} alt="jbl" />
             </Col>
           </Row>
         </Container>

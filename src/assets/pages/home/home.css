@@ -84,6 +84,13 @@
     padding: 5px 10px;
     margin-left: 5px;
     border: 1px solid rgba(0, 0, 0, 0.1);
+    color: #000;
+    border-radius: 5px;
+    transition: 1s;
+}
+.cate .cateHeading .cateBtn a:hover{
+    background-color: #DB4444;
+    color: #fff;
 }
 .cate .cateItem{
     border: 1px solid rgba(0, 0, 0, 0.2);
@@ -102,4 +109,71 @@
 }
 .cate .cateItem i{
     font-size: 57px;
+}
+.thismonth{
+    padding: 60px 0;
+}
+.thismonth .monthheading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.thismonth .monthheading a{
+    padding: 16px 48px;
+    color: #000;
+    border: 1px solid #DB4444;
+    transition: 1s;
+    border-radius: 5px;
+}
+.thismonth .monthheading a:hover{
+    background-color: #DB4444;
+    color: #fff;
+}
+.thismonth span{
+    font-size: 20px;
+    font-weight: 600;
+}
+.thismonth .pricerate{
+    font-size: 22px;
+    font-weight: 700;
+}
+.thismonth .bigthumb{
+    padding: 45px;
+    background-color: #000;
+    color: #fff;
+    margin-top: 45px;
+}
+.thismonth .bigthumb h2{
+    font-size: 48px;
+    font-weight: 700;
+    margin-top: 32px;
+}
+.thismonth .bigthumb .timer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 40px;
+}
+.thismonth .bigthumb .timer .box{
+    border-radius: 50%;
+    background-color: #fff;
+    color: #000;
+    font-size: 12px;
+    height: 62px;
+    width: 62px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.thismonth .bigthumb .timer .box p{
+    padding: 0;
+    margin: 0;
+}
+.thismonth .bigthumb a{
+    display: inline-block;
+    padding: 16px 48px;
+    background-color: #00FF66;
+    color: #000;
+    margin-top: 40px;
 }
