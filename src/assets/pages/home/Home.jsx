@@ -51,7 +51,7 @@ const Home = () => {
       </div>
       <div className="todays">
         <Container>
-          <Row className='subhead'>
+          <Row className='subheading'>
             <h5>Today's Collections</h5>
           </Row>
           <Row>
@@ -97,7 +97,58 @@ const Home = () => {
         </Container>
       </div>
       <div className="cate">
-        
+        <Container>
+          <Row className='subheading'>
+            <h5>Categories</h5>
+          </Row>
+          <Row>
+            <div className="cateHeading">
+              <h2>Browse By Category</h2>
+              <div className="cateBtn">
+                <Link to="hanlepre"><i className="fa-solid fa-arrow-left-long"></i></Link>
+                <Link to="hanlenext"><i className="fa-solid fa-arrow-right-long"></i></Link>
+              </div>
+            </div>
+          </Row>
+          <Row>
+            <Col lg={2}>
+              <div className="cateItem">
+                <i className="fa-solid fa-mobile-screen-button"></i>
+                <p>Phones</p>
+              </div>
+            </Col>
+            <Col lg={2}>
+              <div className="cateItem">
+                <i className="fa-solid fa-computer-classic"></i>
+                <p>Computers</p>
+              </div>
+            </Col>
+            <Col lg={2}>
+              <div className="cateItem">
+                <i className="fa-regular fa-watch"></i>
+                <p>Smart Watches</p>
+              </div>
+            </Col>
+            <Col lg={2}>
+              <div className="cateItem">
+                <i className="fa-solid fa-camera"></i>
+                <p>Cameras</p>
+              </div>
+            </Col>
+            <Col lg={2}>
+              <div className="cateItem">
+                <i className="fa-solid fa-headphones"></i>
+                <p>Headphones</p>
+              </div>
+            </Col>
+            <Col lg={2}>
+              <div className="cateItem">
+                <i className="fa-duotone fa-regular fa-gamepad"></i>
+                <p>Gamings</p>
+              </div>
+            </Col>
+          </Row>
+        </Container>
       </div>
     </div>
   )

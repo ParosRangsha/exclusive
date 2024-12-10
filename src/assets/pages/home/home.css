@@ -1,3 +1,16 @@
+.subheading{
+    padding: 5px 30px;
+    position: relative;
+}
+.subheading::after{
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 20px;
+    background-color: #DB4444;
+}
 .itemList{
     display: flex;
     flex-direction: column;
@@ -21,23 +34,6 @@
 .todays{
     padding: 50px 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-.todays .subhead{
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-.todays h5{
-    padding: 5px 25px;
-    margin: 0;
-}
-.todays .subhead::before{
-    position: absolute;
-    content: '';
-    width: 20px;
-    height: 100%;
-    left: 0;
-    background-color: #DB4444;
 }
 .todays .timer{
     display: flex;
@@ -77,4 +73,33 @@
 }
 .cate{
     padding: 60px 0;
+}
+
+.cate .cateHeading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cate .cateHeading .cateBtn a{
+    padding: 5px 10px;
+    margin-left: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.cate .cateItem{
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 25px;
+    gap: 16px;
+    transition: 1s;
+    border-radius: 5px;
+}
+.cate .cateItem:hover{
+    background-color: #DB4444;
+    color: #fff;
+}
+.cate .cateItem i{
+    font-size: 57px;
 }
