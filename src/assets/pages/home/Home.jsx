@@ -12,6 +12,10 @@ import featureOne from '../../../img/feature1.png'
 import featureTwo from '../../../img/feature2.png'
 import featureThree from '../../../img/feature3.png'
 import featureFour from '../../../img/feature4.png'
+import iconOne from '../../../img/icondelivery.png'
+import iconTwo from '../../../img/iconhelpline.png'
+import iconThree from '../../../img/iconguarantee.png'
+
 
 
 const Home = () => {
@@ -353,6 +357,39 @@ const Home = () => {
                   </div>
                 </Col>
               </Row>
+            </Col>
+          </Row>
+        </Container>
+      </div>
+      <div className="service">
+        <Container>
+          <Row>
+            <Col lg={4}>
+              <div className="box">
+                <div className="thumb">
+                  <img src={iconOne} alt="" />
+                </div>
+                <h4>FREE AND FAST DELIVERY</h4>
+                <p>Free delivery for all orders over $140</p>
+              </div>
+            </Col>
+            <Col lg={4}>
+              <div className="box">
+                <div className="thumb">
+                  <img src={iconTwo} alt="" />
+                </div>
+                <h4>24/7 CUSTOMER SERVICE</h4>
+                <p>Friendly 24/7 customer support</p>
+              </div>
+            </Col>
+            <Col lg={4}>
+              <div className="box">
+                <div className="thumb">
+                  <img src={iconThree} alt="" />
+                </div>
+                <h4>MONEY BACK GUARANTEE</h4>
+                <p>We reurn money within 30 days</p>
+              </div>
             </Col>
           </Row>
         </Container>
