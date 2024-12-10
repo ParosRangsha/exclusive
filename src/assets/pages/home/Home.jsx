@@ -2,16 +2,22 @@ import React, { useEffect, useState } from 'react'
 import './home.css'
 import { Col, Container, Row } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import homeban from '../../../img/homebanner.jpg'
-import jbl from '../../../img/jbl.png'
 import './count.js'
 import axios from 'axios'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
+import homeban from '../../../img/homebanner.jpg'
+import jbl from '../../../img/jbl.png'
+import featureOne from '../../../img/feature1.png'
+import featureTwo from '../../../img/feature2.png'
+import featureThree from '../../../img/feature3.png'
+import featureFour from '../../../img/feature4.png'
+
 
 const Home = () => {
   let [data, setData] = useState([])
   let [mandata, setManData] = useState([])
+  let [prodata, setproData] = useState([])
   let getData = ()=>{
     axios.get('https://dummyjson.com/products/category/laptops').then((response)=>{
       setData(response.data.products);      
@@ -22,9 +28,17 @@ const Home = () => {
       setManData(resman.data.products);
     })
   }
+  let getproData = ()=>{
+    axios.get('https://dummyjson.com/products/category/womens-shoes').then((respro)=>{
+      setproData(respro.data.products)
+    })
+  }
+  useEffect(()=>(
+    getproData()
+  ),[])
   useEffect(()=>(
     getmanData()
-  ))
+  ),[])
   useEffect(()=>(
     getData()
   ),[])
@@ -36,6 +50,13 @@ const Home = () => {
     slidesToScroll: 1,
   };
   var settingsTwo = {
+    arrows: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+  };
+  var settingsThree = {
     arrows: false,
     infinite: true,
     speed: 500,
@@ -119,9 +140,9 @@ const Home = () => {
             <h5>Categories</h5>
           </Row>
           <Row>
-            <div className="cateHeading">
+            <div className="Heading">
               <h2>Browse By Category</h2>
-              <div className="cateBtn">
+              <div className="Btn">
                 <Link to="hanlepre"><i className="fa-solid fa-arrow-left-long"></i></Link>
                 <Link to="hanlenext"><i className="fa-solid fa-arrow-right-long"></i></Link>
               </div>
@@ -224,6 +245,114 @@ const Home = () => {
             </Col>
             <Col lg={7}>
               <img src={jbl} alt="jbl" />
+            </Col>
+          </Row>
+        </Container>
+      </div>
+      <div className="products">
+        <Container>
+          <Row className='subheading'>
+            <h5>Our Products</h5>
+          </Row>
+          <Row>
+            <div className="Heading">
+              <h2>Explore Our Products</h2>
+              <div className="Btn">
+                <Link to="hanlepre"><i className="fa-solid fa-arrow-left-long"></i></Link>
+                <Link to="hanlenext"><i className="fa-solid fa-arrow-right-long"></i></Link>
+              </div>
+            </div>
+          </Row>
+          <Row>
+            <Slider {...settingsThree}>
+              {
+                prodata.map((items)=>(
+                  <Col lg={3}>
+                    <div className="thumb">
+                      <img src={items.images[0]} alt="" />
+                    </div>
+                    <h5 style={{textAlign:'center'}}>{items.title}</h5>
+                    <h6 style={{textAlign:'center'}}>Price: ${items.price}</h6>
+                  </Col>
+                ))
+              }
+            </Slider>
+          </Row>
+          <Row>
+            <div className="BtnView">
+              <Link to="/products">View All Products</Link>
+            </div>
+          </Row>
+        </Container>
+      </div>
+      <div className="featured">
+        <Container>
+          <Row className='subheading'>
+            <h5>Featured</h5>
+          </Row>
+          <Row>
+            <div className="Heading">
+              <h2>New Arrival</h2>
+              <div className="Btn">
+                <Link to="hanlepre"><i className="fa-solid fa-arrow-left-long"></i></Link>
+                <Link to="hanlenext"><i className="fa-solid fa-arrow-right-long"></i></Link>
+              </div>
+            </div>
+          </Row>
+          <Row>
+            <Col lg={6}>
+              <div className="thumb">
+                <img src={featureOne} alt="feature" />
+                <div className="overflow">
+                  <Col lg={6}>
+                    <h3>PlayStation 5</h3>
+                    <p>Black and White version of the PS5 coming out on sale.</p>
+                    <Link to='/shop'>Shop Now</Link>
+                  </Col>
+                </div>
+              </div>
+            </Col>
+            <Col lg={6} className='secondpart'>
+              <Row>
+                <Col lg={12}>
+                  <div className="thumb">
+                    <img src={featureTwo} alt="feature" />
+                    <div className="overflow">
+                      <Col lg={6}>
+                        <h3>Women’s Collections</h3>
+                        <p>Featured woman collections that give you another vibe.</p>
+                        <Link to='/shop'>Shop Now</Link>
+                      </Col>
+                    </div>
+                  </div>
+                </Col>
+              </Row>
+              <Row>
+                <Col lg={6}>
+                  <div className="thumb">
+                    <img src={featureThree} alt="feature" />
+                    <div className="overflow">
+                      <Col lg={6}>
+                        <h3>Speakers</h3>
+                        <p>Amazon wireless speakers</p>
+                        <Link to='/shop'>Shop Now</Link>
+                      </Col>
+                    </div>
+                  </div>
+                </Col>
+                <Col lg={6}>
+                  <div className="thumb">
+                    <img src={featureFour} alt="feature" />
+                    <div className="overflow">
+                      <Col lg={6}>
+                        <h3>Perfume</h3>
+                        <p>GUCCI INTENSE OUD EDP</p>
+                        <Link to='/shop'>Shop Now</Link>
+                      </Col>
+                    </div>
+                  </div>
+                </Col>
+              </Row>
             </Col>
           </Row>
         </Container>
